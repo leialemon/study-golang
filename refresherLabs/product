@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+func discountedPrice(product string, price float64) float64 {
+	var discountedPrice float64
+	switch product{
+	case "apples":
+		discountedPrice = price - (price * 0.1)
+	case "bananas":
+		discountedPrice = price - (price * 0.2)
+	default:
+		discountedPrice = price
+	}
+	return discountedPrice
+}
+
+func main() {
+	fmt.Println(discountedPrice("apples", 100))
+	fmt.Println(discountedPrice("orange", 100))
+	fmt.Println(discountedPrice("bananas", 100))
+	fmt.Println(discountedPrice("bananas", 100))
+	fmt.Println(discountedPrice("oranges", 100))
+}
